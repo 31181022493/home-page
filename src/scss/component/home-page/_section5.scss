@@ -1,0 +1,137 @@
+@import "../../inheritance/color";
+@import "../../base/font";
+@import "../../inheritance/mixin";
+@import "../../inheritance/variable";
+
+.features {
+  .feature1 {
+    background-color: $blackcard;
+    margin: 0px 100px;
+    display: block;
+    font-family: $font-family-Montserrat;
+    color: $white;
+    @include grid-2col;
+    @include tablet {
+      margin: 0px 0px;
+      padding: 50px 50px;
+    }
+    @include mobile {
+      margin: 50px 0px;
+      padding: 0px;
+    }
+    &__left {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 150px;
+        height: auto;
+        margin: auto;
+        @include mobile {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+    &__right {
+      margin: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      text-align: end;
+      @include tablet {
+        text-align: center;
+      }
+      &--title {
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        @include mobile {
+          font-size: 20px;
+        }
+      }
+      &--des {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .feature2 {
+    margin: 0px 100px;
+    @include grid-2col;
+    padding: 0px 100px;
+    background-color: $white-works;
+    @include tablet {
+      margin: 0px 0px;
+      padding: 0px 50px;
+    }
+    @include mobile {
+      margin: 0px 0px;
+      padding: 0px;
+    }
+    .right {
+      align-items: center;
+      img {
+        width: 90%;
+        padding: 0px 40px;
+        margin: 50px auto;
+        @include mobile {
+          padding: 0px;
+          display: flex;
+        }
+      }
+    }
+    .left {
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      padding: 0px 50px;
+      @include tablet {
+        margin: 30px auto;
+      }
+      @include mobile {
+        padding: 0px;
+        text-align: center;
+      }
+      &__content {
+        margin: 0px auto;
+        h1 {
+          font-size: 30px;
+          font-weight: 600;
+          margin-bottom: 40px;
+          @include mobile {
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+        }
+        p {
+          font-size: 13px;
+          @include mobile {
+            text-align: center;
+          }
+        }
+      }
+
+      &__items {
+        margin: 30px auto;
+        display: flex;
+        &--content {
+          margin-right: 30px;
+          i {
+            font-size: 30px;
+            margin: 20px auto;
+            color: $red;
+          }
+          h1 {
+            font-size: 18px;
+            margin-bottom: 10px;
+          }
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}

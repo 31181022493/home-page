@@ -1,0 +1,113 @@
+@import "../../inheritance/color";
+@import "../../base/font";
+@import "../../inheritance/mixin";
+@import "../../inheritance/variable";
+.contact {
+  margin: 0px 100px;
+  @include grid-2col;
+  position: relative;
+  @include tablet {
+    margin: 0px 50px;
+    padding: 30px 50px;
+  }
+  @include mobile {
+    margin: 20px 50px;
+    padding: 0px;
+  }
+  &__content {
+    text-align: end;
+    padding: 0px 40px;
+    @include tablet {
+      text-align: center;
+    }
+    @include mobile {
+      padding: 0px;
+    }
+    h1 {
+      font-size: 35px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      @include tablet {
+        font-size: 34px;
+      }
+      @include mobile {
+        font-size: 15px;
+      }
+    }
+    p {
+      margin-bottom: 30px;
+      font-size: 12px;
+    }
+  }
+  .contact2 {
+    &__form {
+      &--name {
+        width: 500px;
+        height: 30px;
+        margin-bottom: 20px;
+        @include tablet {
+          width: calc(98% + 4px);
+        }
+        @include mobile {
+          height: 20px;
+          width: calc(96% + 3px);
+        }
+      }
+      div {
+        display: flex;
+        margin-bottom: 20px;
+        input {
+          width: 500px;
+          height: 30px;
+          @include tablet {
+            width: 100%;
+          }
+          @include mobile {
+            height: 20px;
+          }
+        }
+      }
+      &--services {
+        width: 510px;
+        height: 35px;
+        margin-bottom: 20px;
+        @include tablet {
+          width: 100%;
+        }
+        @include mobile {
+          height: 26px;
+        }
+      }
+      &--textarea {
+        resize: none;
+        width: 505px;
+        height: 100px;
+        @include tablet {
+          width: calc(98% + 6px);
+        }
+        @include mobile {
+          height: 60px;
+          width: calc(96% + 5px);
+        }
+      }
+      &--btn {
+        position: absolute;
+        width: 78%;
+        left: 150px;
+        margin: 10px auto;
+        background-color: $red;
+        color: $white;
+        padding: 10px;
+        top: 380px;
+        @include tablet {
+          position: relative;
+          width: 100%;
+          left: 0;
+          margin: 10px auto;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}

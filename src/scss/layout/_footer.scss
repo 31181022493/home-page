@@ -1,0 +1,98 @@
+@import "../inheritance/color";
+@import "../base/font";
+@import "../inheritance/mixin";
+@import "../inheritance/variable";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $blackcard;
+  color: $white;
+  margin-top: 100px;
+  .navbar {
+    position: relative;
+    @include navbar;
+    margin-bottom: 50px;
+  }
+  .footer2 {
+    @include grid-2col;
+    padding: 30px 150px;
+    @include tablet {
+      margin: 50px;
+      padding: 50px;
+    }
+    @include mobile {
+      margin: 0px;
+      padding: 50px;
+    }
+
+    &__contact {
+      text-align: start;
+      @include tablet {
+        text-align: center;
+        margin: auto;
+      }
+      @include mobile {
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+      }
+      &--title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 80px;
+        @include tablet {
+          margin-bottom: 20px;
+        }
+      }
+      &--des {
+        font-size: 12px;
+        margin-bottom: 80px;
+        @include tablet {
+          margin-bottom: 20px;
+        }
+      }
+      &--socialmedia i {
+        color: $red;
+        margin-right: 10px;
+        border-radius: 20%;
+        @include tablet {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    &__subscribe {
+      text-align: end;
+      @include tablet {
+        text-align: center;
+      }
+      h3 {
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 80px;
+        @include tablet {
+          margin-bottom: 20px;
+        }
+      }
+      &--form {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        margin-bottom: 80px;
+        input {
+          width: 100%;
+          height: 30px;
+        }
+        button {
+          width: 200px;
+          background-color: $red;
+          color: $white;
+          font-size: 15px;
+        }
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}

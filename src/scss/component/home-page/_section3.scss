@@ -1,0 +1,164 @@
+@import "../../inheritance/color";
+@import "../../base/font";
+@import "../../inheritance/mixin";
+@import "../../inheritance/variable";
+.works {
+  display: flex;
+  flex-direction: row;
+  margin: 80px 100px 0px 100px;
+  padding: 80px 150px;
+  background-color: $blackcard;
+  color: $white;
+  font-family: $font-family-Montserrat;
+  @include tablet {
+    flex-direction: column;
+    margin: 40px 0px 0px 0px;
+    padding: 40px 100px;
+  }
+  @include mobile {
+    flex-direction: column;
+    margin: 40px 0px 0px 0px;
+    padding: 40px 0px;
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    padding: 20px;
+    justify-content: center;
+    margin: auto;
+    @include tablet {
+      width: 100%;
+    }
+    @include mobile {
+      width: 90%;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 30px;
+      @include tablet {
+        font-weight: 600;
+        font-size: 25px;
+      }
+      @include tablet {
+        font-weight: 600;
+        font-size: 20px;
+      }
+    }
+    &__des {
+      padding: 60px 0px;
+      font-size: 15px;
+      @include tablet {
+        font-size: 12px;
+      }
+    }
+    &__btn {
+      margin: 10px 0px;
+      @include tablet {
+        margin: auto;
+      }
+      &--link {
+        border: 1px solid $white;
+        padding: 15px 50px;
+        text-decoration: none;
+        color: $white;
+        text-align: center;
+        @include tablet {
+          padding: 10px 30px;
+        }
+        &:hover {
+          background-color: $red;
+          transition: $transition-btn;
+        }
+      }
+    }
+  }
+  &__img {
+    margin-left: 30px;
+    width: 45%;
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-column-gap: 20px;
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 0px;
+    }
+    &--bg {
+      background-image: url("../assets/images/s3-1.jpg");
+      height: 40vh;
+      width: auto;
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-position: right;
+    }
+    &--red {
+      background-color: $red;
+      height: 40vh;
+      width: auto;
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+}
+.content {
+  background-color: $white-works;
+  margin: 0px 100px 100px 100px;
+  @include grid-2col;
+  @include tablet {
+    margin: 0px;
+    padding: 50px 20px;
+  }
+  @include mobile {
+    margin: 0px;
+    padding: 50px 0px;
+  }
+  .left {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    @include tablet {
+      margin: 0px 50px;
+    }
+    &__items {
+      padding: 20px 30px 40px 0px;
+      align-content: center;
+      &--title {
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+      &--des {
+        line-height: 20px;
+        margin-bottom: 20px;
+        font-size: 13px;
+      }
+    }
+  }
+  .right {
+    padding: 20px;
+    margin-left: 20px;
+    &__title {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      @include tablet {
+        text-align: center;
+        font-size: 25px;
+      }
+    }
+    &__des1 {
+      padding-bottom: 30px;
+      font-size: 15px;
+      @include tablet {
+        font-size: 13px;
+      }
+    }
+    &__des2 {
+      @include tablet {
+        font-size: 13px;
+      }
+    }
+  }
+}

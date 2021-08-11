@@ -1,0 +1,66 @@
+@mixin align-center {
+  display: flex;
+  align-items: center;
+}
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: 385px) {
+    @content;
+  }
+}
+@mixin grid-2col {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 100px 150px;
+  font-family: $font-family-Montserrat;
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@mixin navbar {
+  justify-content: space-around;
+  z-index: 10;
+
+  &__logo {
+    @include align-center;
+    font-family: $font-family-Oxygen;
+    font-weight: bolder;
+    font-size: 35px;
+    text-decoration: none;
+    color: $white;
+    span {
+      color: $red;
+      font-size: 1.5em;
+    }
+  }
+  &__bars {
+    opacity: 0;
+    cursor: pointer;
+  }
+  &__menu ul {
+    font-family: $font-family-Montserrat;
+    @include align-center;
+    list-style: none;
+    text-align: center;
+    margin-right: 20px;
+
+    @include tablet {
+      display: none;
+    }
+
+    li a {
+      color: $white;
+      @include align-center;
+      justify-content: center;
+      text-decoration: none;
+      padding: 0 1rem;
+      font-size: 18px;
+    }
+  }
+}

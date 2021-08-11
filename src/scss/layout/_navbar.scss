@@ -1,0 +1,117 @@
+@import "../inheritance/color";
+@import "../base/font";
+@import "../inheritance/mixin";
+@import "../inheritance/variable";
+
+.navbar {
+  position: fixed;
+  @include align-center;
+  width: 100%;
+  justify-content: space-around;
+  z-index: 1000;
+  font-family: $font-family-Montserrat;
+  // padding-left: 90px;
+  &__logo {
+    @include align-center;
+    font-family: $font-family-Oxygen;
+    font-weight: bolder;
+    font-size: 35px;
+    text-decoration: none;
+    color: $white;
+    margin-left: 100px;
+    span {
+      color: $red;
+      font-size: 1.5em;
+    }
+    @include tablet {
+      margin: auto;
+    }
+  }
+  .active-scroll {
+    color: $white;
+  }
+
+  &__bars {
+    opacity: 0;
+    cursor: pointer;
+
+    @include tablet {
+      color: $white;
+      opacity: 1;
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 2rem;
+    }
+  }
+  &__menu--links {
+    @include align-center;
+    list-style: none;
+    text-align: center;
+    margin-left: 300px;
+
+    .navbar__menu--link {
+      a {
+        color: $white;
+        @include align-center;
+        justify-content: center;
+        text-decoration: none;
+        padding: 0 1rem;
+        font-size: 18px;
+        &:hover {
+          color: $red;
+          transition: $transition-btn;
+        }
+      }
+      .active-scroll {
+        z-index: 10000;
+        color: $white;
+        @include tablet {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+.active-bg {
+  background-color: $blackcard;
+  transition: 0.3s ease-in;
+  padding: 10px 0px;
+}
+
+@include tablet {
+  .navbar {
+    z-index: 1000;
+    &__menu ul {
+      position: absolute;
+      height: 80vh;
+      background: $blackcard;
+      right: 0px;
+      top: 10vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+      li {
+        color: $white !important;
+        margin: 30px;
+        opacity: 0;
+      }
+    }
+    .nav-active {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+}

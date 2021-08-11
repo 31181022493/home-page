@@ -1,0 +1,94 @@
+@import "../../inheritance/color";
+@import "../../base/font";
+@import "../../inheritance/mixin";
+@import "../../inheritance/variable";
+.services {
+  font-family: $font-family-Montserrat;
+  &__title {
+    margin: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    @include tablet {
+      margin: 10px 0px;
+    }
+    h3 {
+      margin-bottom: 30px;
+      color: $red;
+      font-weight: bold;
+      @include tablet {
+        margin-bottom: 10px;
+      }
+    }
+    h1 {
+      margin-bottom: 50px;
+      font-size: 60px;
+      font-weight: bold;
+      span {
+        color: $red;
+      }
+      @include tablet {
+        margin-bottom: 30px;
+        font-size: 40px;
+      }
+      @include mobile {
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+    }
+    p {
+      width: 600px;
+      text-align: center;
+      @include tablet {
+        width: 450px;
+      }
+      @include mobile {
+        width: 350px;
+      }
+    }
+  }
+  &__card {
+    margin: 80px;
+    display: grid;
+    grid-template-columns: 250px 250px 250px;
+    justify-items: center;
+    grid-row-gap: 100px;
+    justify-content: space-evenly;
+    align-items: center;
+    @include tablet {
+      grid-template-columns: 250px 250px;
+      grid-row-gap: 60px;
+      margin-top: 20px;
+    }
+    &--item {
+      text-align: center;
+      @include mobile {
+        margin: 0px auto;
+      }
+      img {
+        width: 50px;
+        margin: 10px 0px;
+        @include mobile {
+          width: 35px;
+        }
+      }
+      h2 {
+        font-weight: bold;
+        font-size: 25px;
+        margin: 20px;
+        @include mobile {
+          font-size: 20px;
+        }
+      }
+      p {
+        @include mobile {
+          margin: 5px;
+          width: 120px;
+        }
+      }
+    }
+  }
+}
